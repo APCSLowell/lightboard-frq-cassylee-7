@@ -31,17 +31,15 @@ public class LightBoard
   {
     /* to be implemented in part (b) */
     int countOn = 0;
-    int r = lights.length;
-    for (int c = 0; c < lights[r].length; c++) {
-      if (lights[row][c])
+    for (int r = 0; r < lights.length; r++) {
+      if (lights[r][col])
         countOn++;
     }
     if (lights[row][col] && countOn % 2 == 0)
       return false;
-    else if (!lights[row][col] && countOn % 3 == 0)
+    if (!lights[row][col] && countOn % 3 == 0)
       return true;
-    else
-      return lights[row][col];
+    return lights[row][col];
   }
   
   public boolean[][] getLights()
