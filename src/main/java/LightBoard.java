@@ -8,7 +8,7 @@ public class LightBoard
    * Precondition: numRows > 0, numCols > 0
    * Postcondition: each light has a 40% probability of being set to on.
    */
-  public LightBoard(int numRows, int numCols)
+  public LightBoard (int numRows, int numCols)
   {
     /* to be implemented in part (a) */
     lights = new boolean [numRows][numCols];
@@ -33,17 +33,17 @@ public class LightBoard
     int countOn = 0;
     int r = lights.length;
     for (int c = 0; c < lights[r].length; c++) {
-      if (lights[row][c] == true)
+      if (lights[row][c])
         countOn++;
     }
     if (lights[row][col] && countOn % 2 == 0)
       return false;
-    if (!lights[row][col] && countOn % 3 == 0)
+    else if (!lights[row][col] && countOn % 3 == 0)
       return true;
     else
       return lights[row][col];
- 
   }
+  
   public boolean[][] getLights()
   {
     return lights;
